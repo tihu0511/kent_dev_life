@@ -8,4 +8,10 @@ public interface RabbitMQDict {
     String QUEUE_NAME = "hello";
     String USER_NAME = "kent";
     String PASSWORD = "kent";
+
+    String CHARSET = "utf-8";
+
+    String TASK_QUEUE_NAME = "task_queue";
+    String LOGS_EXCHANGE = "logs";
+    java.lang.String EXCHANGE_TYPE_FANOUT = "fanout";
 }

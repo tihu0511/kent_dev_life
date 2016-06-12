@@ -13,6 +13,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class HelloWorldSender {
     private static Connection connection = null;
+    private static Channel channel = null;
 
     static {
         ConnectionFactory factory = new ConnectionFactory();
@@ -21,22 +22,33 @@ public class HelloWorldSender {
         factory.setPassword(RabbitMQDict.PASSWORD);
         try {
             connection = factory.newConnection();
+            channel = connection.createChannel();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public void send(String message) throws IOException, TimeoutException {
-        Channel channel = connection.createChannel();
         channel.queueDeclare(RabbitMQDict.QUEUE_NAME, false, false, false, null);
         channel.basicPublish("", RabbitMQDict.QUEUE_NAME, null, message.getBytes());
         System.out.println(RabbitMQDict.HOST_IP + " sent \"" + message + "\"");
-        channel.close();
+
     }
 
-    public void closeConnection() throws IOException {
+    public void closeConnection() throws IOException, TimeoutException {
+        if (null != channel) {
+            channel.close();
+        }
         if (null != connection) {
             connection.close();
         }
+    }
+
+    public static void main(String [] args) throws IOException, TimeoutException {
+        HelloWorldSender sender = new HelloWorldSender();
+        for (int i = 0; i < 100; i++) {
+            sender.send("Hello RabbitMQ!! " + i);
+        }
+        sender.closeConnection();
     }
 }

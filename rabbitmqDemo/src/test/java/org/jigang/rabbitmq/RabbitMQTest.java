@@ -1,5 +1,6 @@
 package org.jigang.rabbitmq;
 
+import org.jigang.rabbitmq.helloworld.HelloWorldRecv;
 import org.jigang.rabbitmq.helloworld.HelloWorldSender;
 import org.junit.Test;
 
