@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+                http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/rabbit
+                http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd">
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="locations">
+            <list>
+                <!-- 标准配置 -->
+                <value>classpath*:rabbitmq.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 配置ConnectionFactory -->
+    <rabbit:connection-factory id="connectionFactory" host="${rabbit.hosts}" username="${rabbit.username}"
+                               password="${rabbit.password}" port="5672" virtual-host="/" connection-factory="refConnectionFactory" />
+
+    <bean id="refConnectionFactory" class="com.rabbitmq.client.ConnectionFactory">
+        <!-- 设置心跳时间，防止长时间未活动被防火墙杀死,默认600秒,单位：秒 -->
+        <property name="requestedHeartbeat" value="600"></property>
+        <!-- 连接超时时间,单位：毫秒 -->
+        <property name="connectionTimeout" value="2000"></property>
+    </bean>
+
+    <!-- queue 队列声明 -->
+    <!-- durable=true,交换机持久化,rabbitmq服务重启交换机依然存在,保证不丢失; durable=false,相反 -->
+    <!-- auto-delete=true:无消费者时，队列自动删除; auto-delete=false：无消费者时，队列不会自动删除 -->
+    <!-- 排他性，exclusive=true:首次申明的connection连接下可见; exclusive=false：所有connection连接下都可见 -->
+    <rabbit:queue id="q_tyb_direct_test1" name="q_tyb_direct_test1"
+                  durable="true"   auto-delete="false"
+                  exclusive="false">
+        <rabbit:queue-arguments>
+            <!-- 设置队列里的最大消息数 -->
+            <entry key="x-max-length">
+                <value type="java.lang.Long">200</value>
+            </entry>
+            <!-- 设置消息过期时间,时间一过消息自动删除, 单位：毫秒 -->
+            <entry key="x-message-ttl">
+                <value type="java.lang.Long">10000</value>
+            </entry>
+        </rabbit:queue-arguments>
+    </rabbit:queue>
+    <rabbit:queue id="q_tyb_direct_test2" name="q_tyb_direct_test2"
+                  durable="true"   auto-delete="false"
+                  exclusive="false">
+        <rabbit:queue-arguments>
+            <!-- 设置队列里的最大消息数 -->
+            <entry key="x-max-length">
+                <value type="java.lang.Long">200</value>
+            </entry>
+            <!-- 设置消息过期时间,时间一过消息自动删除, 单位：毫秒 -->
+            <entry key="x-message-ttl">
+                <value type="java.lang.Long">10000</value>
+            </entry>
+        </rabbit:queue-arguments>
+    </rabbit:queue>
+    <rabbit:queue id="q_tyb_direct_test3" name="q_tyb_direct_test3"
+                  durable="true" auto-delete="false"
+                  exclusive="false">
+        <rabbit:queue-arguments>
+            <!-- 设置队列里的最大消息数 -->
+            <entry key="x-max-length">
+                <value type="java.lang.Long">200</value>
+            </entry>
+            <!-- 设置消息过期时间,时间一过消息自动删除, 单位：毫秒 -->
+            <entry key="x-message-ttl">
+                <value type="java.lang.Long">10000</value>
+            </entry>
+        </rabbit:queue-arguments>
+    </rabbit:queue>
+
+
+
+    <!-- 定义exchange为fanout类型 -->
+    <!-- durable=true,交换机持久化,rabbitmq服务重启交换机依然存在,保证不丢失; durable=false,相反 -->
+    <!-- auto-delete=true:无消费者时，队列自动删除; auto-delete=false：无消费者时，队列不会自动删除 -->
+    <!--<rabbit:direct-exchange name="e_tyb_fanout"
+                            auto-delete="false" durable="true">
+        <rabbit:bindings>
+            <rabbit:binding
+                    queue="q_tyb_fanout_test1"></rabbit:binding>
+            <rabbit:binding
+                    queue="q_tyb_fanout_test2"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>-->
+
+
+    <!-- 定义exchange为direct类型 -->
+    <!-- durable=true,交换机持久化,rabbitmq服务重启交换机依然存在,保证不丢失; durable=false,相反 -->
+    <!-- auto-delete=true:无消费者时，队列自动删除; auto-delete=false：无消费者时，队列不会自动删除 -->
+    <rabbit:direct-exchange name="e_tyb_direct"
+                            auto-delete="false" durable="true">
+        <rabbit:bindings>
+            <rabbit:binding queue="q_tyb_direct_test1" key="r_tyb_direct_test1"></rabbit:binding>
+            <rabbit:binding queue="q_tyb_direct_test2" key="r_tyb_direct_test2"></rabbit:binding>
+            <rabbit:binding queue="q_tyb_direct_test3" key="r_tyb_direct_test3"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+
+
+    <!-- 定义exchange为topic类型 -->
+    <!-- durable=true,交换机持久化,rabbitmq服务重启交换机依然存在,保证不丢失; durable=false,相反 -->
+    <!-- auto-delete=true:无消费者时，队列自动删除; auto-delete=false：无消费者时，队列不会自动删除 -->
+    <!--<rabbit:topic-exchange name="e_tyb_topic"
+                           auto-delete="false" durable="true">
+        <rabbit:bindings>
+            <rabbit:binding queue="q_tyb_topic_test1" pattern="*.*.test1"></rabbit:binding>
+            <rabbit:binding queue="q_tyb_topic_test2" pattern="#.test2"></rabbit:binding>
+            <rabbit:binding queue="q_tyb_topic_test3" pattern="#.2"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:topic-exchange>-->
+
+    <!-- 定义消费者监听器 -->
+    <bean id="consumerListener1" class="org.jigang.rabbitmq.spring.direct.ConsumerListener1" />
+    <bean id="consumerListener2" class="org.jigang.rabbitmq.spring.direct.ConsumerListener2" />
+    <bean id="consumerListener3" class="org.jigang.rabbitmq.spring.direct.ConsumerListener3" />
+
+    <!-- 实现类为org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer -->
+    <!-- acknowledge=auto,消息从队列删除，不管是否正确处理 -->
+    <!-- prefetch=1,同一时间一个消费者只能接收一条消息,可通过web管理界面队列Unacked数值查看，如多个队列,数值累加 -->
+    <rabbit:listener-container connection-factory="connectionFactory" acknowledge="auto" prefetch="20">
+        <rabbit:listener queues="q_tyb_direct_test1" ref="consumerListener1" />
+        <rabbit:listener queues="q_tyb_direct_test2" ref="consumerListener2" />
+        <rabbit:listener queues="q_tyb_direct_test3" ref="consumerListener3" />
+    </rabbit:listener-container>
+
+</beans>

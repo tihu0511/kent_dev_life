@@ -13,5 +13,5 @@ public interface RabbitMQDict {
 
     String TASK_QUEUE_NAME = "task_queue";
     String LOGS_EXCHANGE = "logs";
-    java.lang.String EXCHANGE_TYPE_FANOUT = "fanout";
+    java.lang.String EXCHANGE_TYPE_FANOUT = "direct";
 }
