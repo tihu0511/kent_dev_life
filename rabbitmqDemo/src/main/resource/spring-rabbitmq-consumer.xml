@@ -130,7 +130,7 @@
     <!-- 实现类为org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer -->
     <!-- acknowledge=auto,消息从队列删除，不管是否正确处理 -->
     <!-- prefetch=1,同一时间一个消费者只能接收一条消息,可通过web管理界面队列Unacked数值查看，如多个队列,数值累加 -->
-    <rabbit:listener-container connection-factory="connectionFactory" acknowledge="auto" prefetch="20">
+    <rabbit:listener-container connection-factory="connectionFactory" acknowledge="auto" prefetch="30">
         <rabbit:listener queues="q_tyb_direct_test1" ref="consumerListener1" />
         <rabbit:listener queues="q_tyb_direct_test2" ref="consumerListener2" />
         <rabbit:listener queues="q_tyb_direct_test3" ref="consumerListener3" />
