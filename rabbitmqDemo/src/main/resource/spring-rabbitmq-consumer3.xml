@@ -24,11 +24,11 @@
 
     <!-- 配置ConnectionFactory -->
     <rabbit:connection-factory id="connectionFactory" host="${rabbit.hosts}" username="${rabbit.username}"
-        password="${rabbit.password}" port="5672" virtual-host="/" connection-factory="refConnectionFactory" />
+                               password="${rabbit.password}" port="5672" virtual-host="/" connection-factory="refConnectionFactory" />
 
     <bean id="refConnectionFactory" class="com.rabbitmq.client.ConnectionFactory">
         <!-- 设置心跳时间，防止长时间未活动被防火墙杀死,默认600秒,单位：秒 -->
-        <property name="requestedHeartbeat" value="240"></property>
+        <property name="requestedHeartbeat" value="600"></property>
         <!-- 连接超时时间,单位：毫秒 -->
         <property name="connectionTimeout" value="2000"></property>
     </bean>
@@ -79,11 +79,11 @@
     </rabbit:queue>
 
 
-
     <!-- 定义exchange为fanout类型 -->
     <!-- durable=true,交换机持久化,rabbitmq服务重启交换机依然存在,保证不丢失; durable=false,相反 -->
     <!-- auto-delete=true:无消费者时，队列自动删除; auto-delete=false：无消费者时，队列不会自动删除 -->
-    <rabbit:fanout-exchange name="e_tyb_fanout" auto-delete="false" durable="true">
+    <rabbit:fanout-exchange name="e_tyb_fanout"
+                            auto-delete="false" durable="true">
         <rabbit:bindings>
             <rabbit:binding queue="q_tyb_fanout_test1"></rabbit:binding>
             <rabbit:binding queue="q_tyb_fanout_test2"></rabbit:binding>
@@ -115,10 +115,26 @@
         </rabbit:bindings>
     </rabbit:topic-exchange>-->
 
-    <rabbit:admin connection-factory="connectionFactory" />
-    <rabbit:template id="rabbitTemplate" exchange="e_tyb_direct" connection-factory="connectionFactory" />
+    <!-- 定义消费者监听器 -->
+    <!--<bean id="consumerListener1" class="org.jigang.rabbitmq.spring.direct.ConsumerListener1" />
+    <bean id="consumerListener2" class="org.jigang.rabbitmq.spring.direct.ConsumerListener2" />-->
+    <bean id="consumerListener3" class="org.jigang.rabbitmq.spring.direct.ConsumerListener3" />
 
-    <!-- fanout template -->
-    <rabbit:template id="rabbitFanoutTemplate" exchange="e_tyb_fanout" connection-factory="connectionFactory" />
+    <!-- fanout消费者监听器 -->
+    <bean id="fanoutConsumerList1" class="org.jigang.rabbitmq.spring.fanout.FanoutConsumerList1" />
+    <bean id="fanoutConsumerList2" class="org.jigang.rabbitmq.spring.fanout.FanoutConsumerList2" />
+
+
+    <!-- 实现类为org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer -->
+    <!-- acknowledge=auto,消息从队列删除，不管是否正确处理 -->
+    <!-- prefetch=1,同一时间一个消费者只能接收一条消息,可通过web管理界面队列Unacked数值查看，如多个队列,数值累加 -->
+    <rabbit:listener-container connection-factory="connectionFactory" acknowledge="auto" prefetch="10">
+        <!-- direct -->
+        <rabbit:listener queues="q_tyb_direct_test" ref="consumerListener3" />
+
+        <!-- fanout -->
+        <rabbit:listener queues="q_tyb_fanout_test1" ref="fanoutConsumerList1" />
+        <rabbit:listener queues="q_tyb_fanout_test2" ref="fanoutConsumerList2" />
+    </rabbit:listener-container>
 
 </beans>

@@ -37,7 +37,7 @@
     <!-- durable=true,交换机持久化,rabbitmq服务重启交换机依然存在,保证不丢失; durable=false,相反 -->
     <!-- auto-delete=true:无消费者时，队列自动删除; auto-delete=false：无消费者时，队列不会自动删除 -->
     <!-- 排他性，exclusive=true:首次申明的connection连接下可见; exclusive=false：所有connection连接下都可见 -->
-    <rabbit:queue id="q_tyb_direct_test1" name="q_tyb_direct_test1"
+    <rabbit:queue id="q_tyb_direct_test" name="q_tyb_direct_test"
                   durable="true"   auto-delete="false"
                   exclusive="false">
         <rabbit:queue-arguments>
@@ -47,64 +47,55 @@
             </entry>
             <!-- 设置消息过期时间,时间一过消息自动删除, 单位：毫秒 -->
             <entry key="x-message-ttl">
-                <value type="java.lang.Long">10000</value>
-            </entry>
-        </rabbit:queue-arguments>
-    </rabbit:queue>
-    <rabbit:queue id="q_tyb_direct_test2" name="q_tyb_direct_test2"
-                  durable="true"   auto-delete="false"
-                  exclusive="false">
-        <rabbit:queue-arguments>
-            <!-- 设置队列里的最大消息数 -->
-            <entry key="x-max-length">
-                <value type="java.lang.Long">200</value>
-            </entry>
-            <!-- 设置消息过期时间,时间一过消息自动删除, 单位：毫秒 -->
-            <entry key="x-message-ttl">
-                <value type="java.lang.Long">10000</value>
-            </entry>
-        </rabbit:queue-arguments>
-    </rabbit:queue>
-    <rabbit:queue id="q_tyb_direct_test3" name="q_tyb_direct_test3"
-                  durable="true" auto-delete="false"
-                  exclusive="false">
-        <rabbit:queue-arguments>
-            <!-- 设置队列里的最大消息数 -->
-            <entry key="x-max-length">
-                <value type="java.lang.Long">200</value>
-            </entry>
-            <!-- 设置消息过期时间,时间一过消息自动删除, 单位：毫秒 -->
-            <entry key="x-message-ttl">
-                <value type="java.lang.Long">10000</value>
+                <value type="java.lang.Long">3600000</value>
             </entry>
         </rabbit:queue-arguments>
     </rabbit:queue>
 
+    <!-- fanout队列声明 -->
+    <rabbit:queue id="q_tyb_fanout_test1" name="q_tyb_fanout_test1" durable="true" auto-delete="false" exclusive="false">
+        <rabbit:queue-arguments>
+            <!-- 设置队列里的最大消息数 -->
+            <entry key="x-max-length">
+                <value type="java.lang.Long">200</value>
+            </entry>
+            <!-- 设置消息过期时间,时间一过消息自动删除, 单位：毫秒 -->
+            <entry key="x-message-ttl">
+                <value type="java.lang.Long">3600000</value>
+            </entry>
+        </rabbit:queue-arguments>
+    </rabbit:queue>
+    <rabbit:queue id="q_tyb_fanout_test2" name="q_tyb_fanout_test2" durable="true" auto-delete="false" exclusive="false">
+        <rabbit:queue-arguments>
+            <!-- 设置队列里的最大消息数 -->
+            <entry key="x-max-length">
+                <value type="java.lang.Long">200</value>
+            </entry>
+            <!-- 设置消息过期时间,时间一过消息自动删除, 单位：毫秒 -->
+            <entry key="x-message-ttl">
+                <value type="java.lang.Long">3600000</value>
+            </entry>
+        </rabbit:queue-arguments>
+    </rabbit:queue>
 
 
     <!-- 定义exchange为fanout类型 -->
     <!-- durable=true,交换机持久化,rabbitmq服务重启交换机依然存在,保证不丢失; durable=false,相反 -->
     <!-- auto-delete=true:无消费者时，队列自动删除; auto-delete=false：无消费者时，队列不会自动删除 -->
-    <!--<rabbit:direct-exchange name="e_tyb_fanout"
-                            auto-delete="false" durable="true">
+    <rabbit:fanout-exchange name="e_tyb_fanout" auto-delete="false" durable="true">
         <rabbit:bindings>
-            <rabbit:binding
-                    queue="q_tyb_fanout_test1"></rabbit:binding>
-            <rabbit:binding
-                    queue="q_tyb_fanout_test2"></rabbit:binding>
+            <rabbit:binding queue="q_tyb_fanout_test1"></rabbit:binding>
+            <rabbit:binding queue="q_tyb_fanout_test2"></rabbit:binding>
         </rabbit:bindings>
-    </rabbit:direct-exchange>-->
+    </rabbit:fanout-exchange>
 
 
     <!-- 定义exchange为direct类型 -->
     <!-- durable=true,交换机持久化,rabbitmq服务重启交换机依然存在,保证不丢失; durable=false,相反 -->
     <!-- auto-delete=true:无消费者时，队列自动删除; auto-delete=false：无消费者时，队列不会自动删除 -->
-    <rabbit:direct-exchange name="e_tyb_direct"
-                            auto-delete="false" durable="true">
+    <rabbit:direct-exchange name="e_tyb_direct" auto-delete="false" durable="true">
         <rabbit:bindings>
-            <rabbit:binding queue="q_tyb_direct_test1" key="r_tyb_direct_test1"></rabbit:binding>
-            <rabbit:binding queue="q_tyb_direct_test2" key="r_tyb_direct_test2"></rabbit:binding>
-            <rabbit:binding queue="q_tyb_direct_test3" key="r_tyb_direct_test3"></rabbit:binding>
+            <rabbit:binding queue="q_tyb_direct_test" key="r_tyb_direct_test"></rabbit:binding>
         </rabbit:bindings>
     </rabbit:direct-exchange>
 
@@ -124,16 +115,28 @@
 
     <!-- 定义消费者监听器 -->
     <bean id="consumerListener1" class="org.jigang.rabbitmq.spring.direct.ConsumerListener1" />
-    <bean id="consumerListener2" class="org.jigang.rabbitmq.spring.direct.ConsumerListener2" />
-    <bean id="consumerListener3" class="org.jigang.rabbitmq.spring.direct.ConsumerListener3" />
+    <!--<bean id="consumerListener2" class="org.jigang.rabbitmq.spring.direct.ConsumerListener2" />-->
+    <!--<bean id="consumerListener3" class="org.jigang.rabbitmq.spring.direct.ConsumerListener3" />-->
+
+    <!-- fanout消费者监听器 -->
+    <bean id="fanoutConsumerList1" class="org.jigang.rabbitmq.spring.fanout.FanoutConsumerList1" />
+    <bean id="fanoutConsumerList2" class="org.jigang.rabbitmq.spring.fanout.FanoutConsumerList2" />
+    <bean id="fanoutConsumerList3" class="org.jigang.rabbitmq.spring.fanout.FanoutConsumerList3" />
+
 
     <!-- 实现类为org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer -->
     <!-- acknowledge=auto,消息从队列删除，不管是否正确处理 -->
     <!-- prefetch=1,同一时间一个消费者只能接收一条消息,可通过web管理界面队列Unacked数值查看，如多个队列,数值累加 -->
-    <rabbit:listener-container connection-factory="connectionFactory" acknowledge="auto" prefetch="30">
-        <rabbit:listener queues="q_tyb_direct_test1" ref="consumerListener1" />
-        <rabbit:listener queues="q_tyb_direct_test2" ref="consumerListener2" />
-        <rabbit:listener queues="q_tyb_direct_test3" ref="consumerListener3" />
+    <rabbit:listener-container connection-factory="connectionFactory" acknowledge="auto" prefetch="10">
+        <!-- direct -->
+        <rabbit:listener queues="q_tyb_direct_test" ref="consumerListener1" />
+        <!--<rabbit:listener queues="q_tyb_direct_test" ref="consumerListener2" />-->
+        <!--<rabbit:listener queues="q_tyb_direct_test" ref="consumerListener3" />-->
+
+        <!-- fanout -->
+        <rabbit:listener queues="q_tyb_fanout_test1" ref="fanoutConsumerList1" />
+        <!--<rabbit:listener queues="q_tyb_fanout_test1" ref="fanoutConsumerList3" />-->
+        <rabbit:listener queues="q_tyb_fanout_test2" ref="fanoutConsumerList2" />
     </rabbit:listener-container>
 
 </beans>

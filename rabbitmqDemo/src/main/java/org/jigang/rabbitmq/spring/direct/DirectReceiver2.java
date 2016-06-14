@@ -6,8 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * Created by BF100271 on 2016/6/12.
  */
-public class DirectReceiver {
+public class DirectReceiver2 {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring-rabbitmq-consumer.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-rabbitmq-consumer2.xml");
     }
 }

@@ -16,12 +16,10 @@ public class DirectSender {
     public static void main(String[] args) throws InterruptedException {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-rabbitmq-producer.xml");
         AmqpTemplate amqpTemplate = (AmqpTemplate) context.getBean("rabbitTemplate");
-        String[] routingKeys = {"r_tyb_direct_test1", "r_tyb_direct_test2", "r_tyb_direct_test3"};
         for(int i=0;i<100;i++){
-            String routingKey = routingKeys[random.nextInt(routingKeys.length)];
             String message = "test spring async=>" + i;
-            amqpTemplate.convertAndSend(routingKey, message);
-            System.out.println("Send [routingKey=" + routingKey + "] message : " + message);
+            amqpTemplate.convertAndSend("r_tyb_direct_test", message);
+            System.out.println("Send [routingKey=r_tyb_direct_test] message : " + message);
             Thread.sleep(500);
         }
     }

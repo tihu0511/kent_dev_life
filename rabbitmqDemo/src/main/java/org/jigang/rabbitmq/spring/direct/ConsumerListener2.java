@@ -16,5 +16,6 @@ public class ConsumerListener2 implements MessageListener {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println("consumer 2 done : " + msg);
     }
 }

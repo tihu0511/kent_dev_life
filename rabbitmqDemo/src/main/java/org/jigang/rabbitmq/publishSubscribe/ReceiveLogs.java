@@ -35,8 +35,11 @@ class RecvLogsThread extends Thread {
             channel.queueBind(queueName, RabbitMQDict.LOGS_EXCHANGE, "");
             System.out.println(getName() + " waiting for messages ");
 
+            channel.basicQos(10);
+
+            boolean autoAck = false;
             QueueingConsumer consumer = new QueueingConsumer(channel);
-            channel.basicConsume(queueName, true, consumer);
+            channel.basicConsume(queueName, autoAck, consumer);
 
             while (true) {
                 QueueingConsumer.Delivery delivery = consumer.nextDelivery();
@@ -44,6 +47,7 @@ class RecvLogsThread extends Thread {
 
                 System.out.println(getName() + " received message : " + message);
                 Thread.sleep(3000);//模拟一个消息处理需要3秒
+                channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
             }
         } catch (Exception e) {
             e.printStackTrace();
