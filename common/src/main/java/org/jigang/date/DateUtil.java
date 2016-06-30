@@ -10,16 +10,16 @@ import java.util.Date;
  */
 public class DateUtil {
 
-    public final static String FORMAT_YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";
-    public final static String FORMAT_YYYY_MM_DD = "yyyy-MM-dd";
+    public final static String FORMAT_TIME = "yyyy-MM-dd HH:mm:ss";
+    public final static String FORMAT_DAY = "yyyy-MM-dd";
     public static final String FORMAT_YYYYMMDD = "yyyyMMdd";
 
     public static String parseDateToString(Date date){
-        return new SimpleDateFormat(FORMAT_YYYY_MM_DD_HH_MM_SS).format(date);
+        return new SimpleDateFormat(FORMAT_TIME).format(date);
     }
 
     public static Date parse(String date) throws ParseException {
-        return  new SimpleDateFormat(FORMAT_YYYY_MM_DD_HH_MM_SS).parse(date);
+        return  new SimpleDateFormat(FORMAT_TIME).parse(date);
     }
 
     public static Date parse(String date, String format) throws ParseException {

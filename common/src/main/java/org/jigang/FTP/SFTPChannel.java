@@ -1,4 +1,4 @@
-package org.jigang.FTP;
+package org.jigang.ftp;
 
 
 import com.jcraft.jsch.Channel;
