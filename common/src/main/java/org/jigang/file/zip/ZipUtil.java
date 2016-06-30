@@ -1,6 +1,9 @@
 package org.jigang.file.zip;
 
 import org.apache.log4j.Logger;
+import org.apache.tools.ant.Project;
+import org.apache.tools.ant.taskdefs.Zip;
+import org.apache.tools.ant.types.FileSet;
 import org.apache.tools.zip.ZipEntry;
 import org.apache.tools.zip.ZipFile;
 
@@ -76,6 +79,33 @@ public class ZipUtil {
                 zipFile.close();
             }
         }
+    }
+
+    /**
+     * 压缩zip文件
+     * @param srcPath
+     * @param destFile
+     */
+    public static void zip(String srcPath, String destFile) {
+        File srcdir = new File(srcPath);
+        if (!srcdir.exists()) {
+            throw new RuntimeException(srcPath + "不存在！");
+        }
+
+        File dest = new File(destFile);
+
+        Project prj = new Project();
+        Zip zip = new Zip();
+        zip.setProject(prj);
+        zip.setDestFile(dest);
+        FileSet fileSet = new FileSet();
+        fileSet.setProject(prj);
+        fileSet.setDir(srcdir);
+        //fileSet.setIncludes("**/*.java"); 包括哪些文件或文件夹 eg:zip.setIncludes("*.java");
+        //fileSet.setExcludes(...); 排除哪些文件或文件夹
+        zip.addFileset(fileSet);
+
+        zip.execute();
     }
 
 }
