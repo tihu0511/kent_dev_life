@@ -12,6 +12,7 @@ public class HelloWorldRecv {
     private static Connection connection = null;
     private static Channel channel = null;
 
+
     static {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(RabbitMQDict.HOST_IP);
