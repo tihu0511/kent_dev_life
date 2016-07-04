@@ -2,6 +2,7 @@ package org.jigang;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import org.jigang.ws.ITest;
+import org.jigang.ws.IValidationService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +21,10 @@ public class Test1 {
     @Test
     public void test() {
         testService.sayHello();
+    }
+
+    @Test
+    public void testValidate() {
+        testService.validationParam();
     }
 }

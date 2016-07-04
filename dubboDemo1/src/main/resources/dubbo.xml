@@ -9,4 +9,6 @@
 
     <!-- 提供生产者接口 -->
     <dubbo:service interface="org.jigang.ws.ITest" ref="testImpl" version="1.0.0" />
+
+    <dubbo:service interface="org.jigang.ws.IValidationService" ref="validationService" version="1.0.0" />
 </beans>

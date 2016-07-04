@@ -41,10 +41,11 @@ import java.util.Map;
  */
 public class HttpUtil {
     public static final String PLAIN_TEXT = "text/plain";
-    public static final String XML = "text/xml";
+    public static final String TEXT_XML = "text/xml";
+    public static final String APPLICATION_XML = "application/xml";
+    public final static String APPLICATION_JSON = "application/json";
 
     private static final Logger logger = Logger.getLogger(HttpUtil.class);
-
     //默认编码
     private static final String DEFAULT_CHARSET = "UTF-8";
 
@@ -131,8 +132,31 @@ public class HttpUtil {
      * @return
      * @throws IOException
      */
-    public static String postXml(String url, String xml, String charset) throws IOException {
-        return postContent(url, XML, xml, charset);
+    public static String postTextXml(String url, String xml, String charset) throws IOException {
+        return postContent(url, TEXT_XML, xml, charset);
+    }
+
+    /**
+     * POST发送xml
+     * @param url
+     * @param xml
+     * @param charset
+     * @return
+     * @throws IOException
+     */
+    public static String postApplicationXml(String url, String xml, String charset) throws IOException {
+        return postContent(url, APPLICATION_XML, xml, charset);
+    }
+
+    /**
+     * POST发送JSON
+      * @param url
+     * @param json
+     * @param charset
+     * @return
+     */
+    public static String postJson(String url, String json, String charset) throws IOException {
+        return postContent(url, APPLICATION_JSON, json, charset);
     }
 
     /**
@@ -182,7 +206,7 @@ public class HttpUtil {
      * @return
      * @throws IOException
      */
-    public static String postContent(String url, String content, String mimeType, String charset) throws IOException {
+    public static String postContent(String url, String mimeType, String content, String charset) throws IOException {
         CloseableHttpClient httpClient = null;
         CloseableHttpResponse response = null;
         try {
@@ -285,4 +309,5 @@ public class HttpUtil {
             return null;
         }
     };
+
 }

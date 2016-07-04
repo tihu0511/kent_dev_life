@@ -1,0 +1,441 @@
+2016-06-16 09:51:55,938 [main] INFO  libaba.dubbo.common.logger.LoggerFactory -using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2016-06-16 09:51:56,778 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Load registry store file C:\Users\BF100252\.dubbo\dubbo-registry-192.168.153.128.cache, data: {org.jigang.ws.ITest:1.0.0=empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=configurators&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8000&revision=1.0-SNAPSHOT&side=consumer&timestamp=1466041816815&version=1.0.0 empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8000&revision=1.0-SNAPSHOT&side=consumer&timestamp=1466041816815&version=1.0.0 dubbo://10.1.60.18:50880/org.jigang.ws.ITest?anyhost=true&application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=1380&revision=1.0-SNAPSHOT&side=provider&timestamp=1466041694304&version=1.0.0}, dubbo version: 2.5.3, current host: 127.0.0.1
+2016-06-16 09:51:56,812 [ZkClient-EventThread-15-192.168.153.128:2181] INFO  org.I0Itec.zkclient.ZkEventThread        -Starting ZkClient event thread.
+2016-06-16 09:52:06,382 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 09:52:06,382 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 09:52:06,386 [main-EventThread] INFO  org.I0Itec.zkclient.ZkClient             -zookeeper state changed (SyncConnected)
+2016-06-16 09:52:06,438 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Register: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:06,472 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Subscribe: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:06,522 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Notify urls for subscribe url consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, urls: [dubbo://10.1.60.18:50880/org.jigang.ws.ITest?anyhost=true&application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=1380&revision=1.0-SNAPSHOT&side=provider&timestamp=1466041694304&version=1.0.0, empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=configurators&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:06,751 [main] INFO  .dubbo.remoting.transport.AbstractClient - [DUBBO] Successed connect to server /10.1.60.18:50880 from NettyClient 10.1.60.18 using dubbo version 2.5.3, channel is NettyChannel [channel=[id: 0x23a9ba52, /10.1.60.18:50129 => /10.1.60.18:50880]], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:06,751 [main] INFO  .dubbo.remoting.transport.AbstractClient - [DUBBO] Start NettyClient BF100271-PC/10.1.60.18 connect to the server /10.1.60.18:50880, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:06,826 [main] INFO  com.alibaba.dubbo.config.AbstractConfig  - [DUBBO] Refer dubbo service org.jigang.ws.ITest from url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?anyhost=true&application=dubbo_test_2&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:57,501 [main-EventThread] INFO  org.I0Itec.zkclient.ZkClient             -zookeeper state changed (Disconnected)
+2016-06-16 09:52:57,610 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig  - [DUBBO] Run shutdown hook now., dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:57,612 [DubboShutdownHook] INFO  registry.support.AbstractRegistryFactory - [DUBBO] Close all registries [zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_2&dubbo=2.5.3&interface=com.alibaba.dubbo.registry.RegistryService&pid=8996&timestamp=1466041916722], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:57,612 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Destroy registry:zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_2&dubbo=2.5.3&interface=com.alibaba.dubbo.registry.RegistryService&pid=8996&timestamp=1466041916722, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:57,612 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Unregister: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:57,629 [Thread-2] INFO  bo.remoting.transport.netty.NettyChannel - [DUBBO] Close netty channel [id: 0x23a9ba52, /10.1.60.18:50129 => /10.1.60.18:50880], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:57,633 [DubboSharedHandler-thread-1] INFO  a.dubbo.rpc.protocol.dubbo.DubboProtocol - [DUBBO] disconected from /10.1.60.18:50880,url:dubbo://10.1.60.18:50880/org.jigang.ws.ITest?anyhost=true&application=dubbo_test_2&check=false&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:52:58,911 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxn          -Session 0x15558c0c1760004 for server 192.168.153.128/192.168.153.128:2181, unexpected error, closing socket connection and attempting reconnect
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:68)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:355)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2016-06-16 09:52:58,911 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxn          -Session 0x15558c0c1760004 for server 192.168.153.128/192.168.153.128:2181, unexpected error, closing socket connection and attempting reconnect
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:68)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:355)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2016-06-16 09:53:00,212 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 09:53:00,212 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 09:53:00,212 [main-EventThread] INFO  org.I0Itec.zkclient.ZkClient             -zookeeper state changed (Expired)
+2016-06-16 09:53:00,219 [ZkClient-EventThread-15-192.168.153.128:2181] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Recover subscribe url [consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:02,496 [DubboRegistryFailedRetryTimer-thread-1] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Retry subscribe {consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0=[com.alibaba.dubbo.registry.integration.RegistryDirectory@24fb6a80]}, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:09,531 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 09:53:09,531 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 09:53:09,533 [ZkClient-EventThread-15-192.168.153.128:2181] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Notify urls for subscribe url consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, urls: [dubbo://10.1.60.18:50880/org.jigang.ws.ITest?anyhost=true&application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=1380&revision=1.0-SNAPSHOT&side=provider&timestamp=1466041694304&version=1.0.0], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:09,545 [main-EventThread] INFO  org.I0Itec.zkclient.ZkClient             -zookeeper state changed (SyncConnected)
+2016-06-16 09:53:09,556 [ZkClient-EventThread-15-192.168.153.128:2181] INFO  .dubbo.remoting.transport.AbstractClient - [DUBBO] Successed connect to server /10.1.60.18:50880 from NettyClient 10.1.60.18 using dubbo version 2.5.3, channel is NettyChannel [channel=[id: 0x173a2589, /10.1.60.18:50154 => /10.1.60.18:50880]], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:09,558 [ZkClient-EventThread-15-192.168.153.128:2181] INFO  .dubbo.remoting.transport.AbstractClient - [DUBBO] Start NettyClient BF100271-PC/10.1.60.18 connect to the server /10.1.60.18:50880, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:09,558 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Destroy unregister url consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:09,559 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Unsubscribe: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:09,560 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Destroy unsubscribe url consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:09,565 [DubboRegistryFailedRetryTimer-thread-1] WARN  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Failed to retry subscribe {consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0=[]}, waiting for again, cause: Failed to subscribe consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0 to zookeeper zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_2&dubbo=2.5.3&interface=com.alibaba.dubbo.registry.RegistryService&pid=8996&timestamp=1466041916722, cause: java.lang.InterruptedException, dubbo version: 2.5.3, current host: 10.1.60.18
+com.alibaba.dubbo.rpc.RpcException: Failed to subscribe consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_2&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0 to zookeeper zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_2&dubbo=2.5.3&interface=com.alibaba.dubbo.registry.RegistryService&pid=8996&timestamp=1466041916722, cause: java.lang.InterruptedException
+	at com.alibaba.dubbo.registry.zookeeper.ZookeeperRegistry.doSubscribe(ZookeeperRegistry.java:173)
+	at com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:362)
+	at com.alibaba.dubbo.registry.support.FailbackRegistry$1.run(FailbackRegistry.java:67)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.I0Itec.zkclient.exception.ZkInterruptedException: java.lang.InterruptedException
+	at org.I0Itec.zkclient.ZkClient.retryUntilConnected(ZkClient.java:702)
+	at org.I0Itec.zkclient.ZkClient.exists(ZkClient.java:436)
+	at org.I0Itec.zkclient.ZkClient$13.call(ZkClient.java:861)
+	at org.I0Itec.zkclient.ZkClient$13.call(ZkClient.java:858)
+	at org.I0Itec.zkclient.ZkClient.retryUntilConnected(ZkClient.java:690)
+	at org.I0Itec.zkclient.ZkClient.watchForChilds(ZkClient.java:858)
+	at org.I0Itec.zkclient.ZkClient.subscribeChildChanges(ZkClient.java:114)
+	at com.alibaba.dubbo.remoting.zookeeper.zkclient.ZkclientZookeeperClient.addTargetChildListener(ZkclientZookeeperClient.java:88)
+	at com.alibaba.dubbo.remoting.zookeeper.zkclient.ZkclientZookeeperClient.addTargetChildListener(ZkclientZookeeperClient.java:17)
+	at com.alibaba.dubbo.remoting.zookeeper.support.AbstractZookeeperClient.addChildListener(AbstractZookeeperClient.java:71)
+	at com.alibaba.dubbo.registry.zookeeper.ZookeeperRegistry.doSubscribe(ZookeeperRegistry.java:165)
+	... 9 more
+Caused by: java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.zookeeper.ClientCnxn.submitRequest(ClientCnxn.java:1309)
+	at org.apache.zookeeper.ZooKeeper.exists(ZooKeeper.java:1036)
+	at org.apache.zookeeper.ZooKeeper.exists(ZooKeeper.java:1069)
+	at org.I0Itec.zkclient.ZkConnection.exists(ZkConnection.java:95)
+	at org.I0Itec.zkclient.ZkClient$3.call(ZkClient.java:439)
+	at org.I0Itec.zkclient.ZkClient$3.call(ZkClient.java:436)
+	at org.I0Itec.zkclient.ZkClient.retryUntilConnected(ZkClient.java:690)
+	... 19 more
+2016-06-16 09:53:09,565 [DubboShutdownHook] INFO  a.dubbo.rpc.protocol.dubbo.DubboProtocol - [DUBBO] Close dubbo connect: /10.1.60.18:50154-->/10.1.60.18:50880, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:09,569 [DubboShutdownHook] INFO  bo.remoting.transport.netty.NettyChannel - [DUBBO] Close netty channel [id: 0x173a2589, /10.1.60.18:50154 => /10.1.60.18:50880], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:09,570 [DubboShutdownHook] INFO  a.dubbo.rpc.protocol.dubbo.DubboProtocol - [DUBBO] Close dubbo connect: 10.1.60.18:0-->10.1.60.18:50880, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:09,570 [DubboShutdownHook] INFO  a.dubbo.rpc.protocol.dubbo.DubboProtocol - [DUBBO] Destroy reference: dubbo://10.1.60.18:50880/org.jigang.ws.ITest?anyhost=true&application=dubbo_test_2&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:53:09,571 [DubboSharedHandler-thread-1] INFO  a.dubbo.rpc.protocol.dubbo.DubboProtocol - [DUBBO] disconected from /10.1.60.18:50880,url:dubbo://10.1.60.18:50880/org.jigang.ws.ITest?anyhost=true&application=dubbo_test_2&check=false&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=org.jigang.ws.ITest&methods=sayHello&pid=8996&revision=1.0.0&side=consumer&timestamp=1466041916657&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 09:59:57,816 [main] INFO  libaba.dubbo.common.logger.LoggerFactory -using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2016-06-16 09:59:59,294 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Load registry store file C:\Users\BF100252\.dubbo\dubbo-registry-192.168.153.128.cache, data: {org.jigang.ws.ITest:1.0.0=empty://10.1.60.18:50880/org.jigang.ws.ITest?anyhost=true&application=dubbo_test_1&category=configurators&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8404&revision=1.0-SNAPSHOT&side=provider&timestamp=1466042291502&version=1.0.0}, dubbo version: 2.5.3, current host: 127.0.0.1
+2016-06-16 09:59:59,317 [ZkClient-EventThread-13-192.168.153.128:2181] INFO  org.I0Itec.zkclient.ZkEventThread        -Starting ZkClient event thread.
+2016-06-16 10:00:08,775 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 10:00:08,775 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 10:00:08,778 [main-EventThread] INFO  org.I0Itec.zkclient.ZkClient             -zookeeper state changed (SyncConnected)
+2016-06-16 10:00:08,828 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Register: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:08,862 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Subscribe: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:08,920 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Notify urls for subscribe url consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0, urls: [dubbo://10.1.60.18:50880/org.jigang.ws.ITest?anyhost=true&application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8404&revision=1.0-SNAPSHOT&side=provider&timestamp=1466042291502&version=1.0.0, empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=configurators&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0, empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,175 [main] INFO  .dubbo.remoting.transport.AbstractClient - [DUBBO] Successed connect to server /10.1.60.18:50880 from NettyClient 10.1.60.18 using dubbo version 2.5.3, channel is NettyChannel [channel=[id: 0x1b1cfb87, /10.1.60.18:50296 => /10.1.60.18:50880]], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,175 [main] INFO  .dubbo.remoting.transport.AbstractClient - [DUBBO] Start NettyClient BF100271-PC/10.1.60.18 connect to the server /10.1.60.18:50880, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,255 [main] INFO  com.alibaba.dubbo.config.AbstractConfig  - [DUBBO] Refer dubbo service org.jigang.ws.ITest from url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?anyhost=true&application=dubbo_test_1&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,444 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig  - [DUBBO] Run shutdown hook now., dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,445 [Thread-2] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Unsubscribe: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,445 [DubboShutdownHook] INFO  registry.support.AbstractRegistryFactory - [DUBBO] Close all registries [zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=com.alibaba.dubbo.registry.RegistryService&pid=5816&timestamp=1466042399243], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,446 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Destroy registry:zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=com.alibaba.dubbo.registry.RegistryService&pid=5816&timestamp=1466042399243, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,446 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Unregister: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,447 [Thread-2] INFO  bo.remoting.transport.netty.NettyChannel - [DUBBO] Close netty channel [id: 0x1b1cfb87, /10.1.60.18:50296 => /10.1.60.18:50880], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,457 [DubboSharedHandler-thread-1] INFO  a.dubbo.rpc.protocol.dubbo.DubboProtocol - [DUBBO] disconected from /10.1.60.18:50880,url:dubbo://10.1.60.18:50880/org.jigang.ws.ITest?anyhost=true&application=dubbo_test_1&check=false&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,459 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Destroy unregister url consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,459 [ZkClient-EventThread-13-192.168.153.128:2181] INFO  org.I0Itec.zkclient.ZkEventThread        -Terminate ZkClient event thread.
+2016-06-16 10:00:09,469 [DubboShutdownHook] INFO  a.dubbo.rpc.protocol.dubbo.DubboProtocol - [DUBBO] Close dubbo connect: 10.1.60.18:0-->10.1.60.18:50880, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:00:09,470 [DubboShutdownHook] INFO  a.dubbo.rpc.protocol.dubbo.DubboProtocol - [DUBBO] Close dubbo connect: 10.1.60.18:0-->10.1.60.18:50880, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:09:54,351 [main] INFO  libaba.dubbo.common.logger.LoggerFactory -using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2016-06-16 10:09:55,581 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Load registry store file C:\Users\BF100252\.dubbo\dubbo-registry-192.168.153.128.cache, data: {org.jigang.ws.ITest:1.0.0=empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=configurators&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0 empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=5816&revision=1.0.0&side=consumer&timestamp=1466042399148&version=1.0.0 dubbo://10.1.60.18:50880/org.jigang.ws.ITest?anyhost=true&application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8404&revision=1.0-SNAPSHOT&side=provider&timestamp=1466042291502&version=1.0.0}, dubbo version: 2.5.3, current host: 127.0.0.1
+2016-06-16 10:09:55,599 [ZkClient-EventThread-13-192.168.153.128:2181] INFO  org.I0Itec.zkclient.ZkEventThread        -Starting ZkClient event thread.
+2016-06-16 10:10:05,054 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 10:10:05,054 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 10:10:05,073 [main-EventThread] INFO  org.I0Itec.zkclient.ZkClient             -zookeeper state changed (SyncConnected)
+2016-06-16 10:10:05,106 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Register: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:05,237 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Subscribe: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:05,283 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Notify urls for subscribe url consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0, urls: [empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0, empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=configurators&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0, empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:05,291 [main] WARN  ontext.support.GenericApplicationContext -Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.jigang.ws.ITest org.jigang.TestService.test; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:119)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:42)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.jigang.ws.ITest org.jigang.TestService.test; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 45 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:175)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:103)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 47 more
+Caused by: java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at com.alibaba.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:420)
+	at com.alibaba.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:300)
+	at com.alibaba.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:138)
+	at com.alibaba.dubbo.config.spring.ReferenceBean.getObject(ReferenceBean.java:65)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
+	... 55 more
+2016-06-16 10:10:05,291 [main] WARN  ontext.support.GenericApplicationContext -Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.jigang.ws.ITest org.jigang.TestService.test; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:119)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:42)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.jigang.ws.ITest org.jigang.TestService.test; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 45 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:175)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:103)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 47 more
+Caused by: java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at com.alibaba.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:420)
+	at com.alibaba.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:300)
+	at com.alibaba.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:138)
+	at com.alibaba.dubbo.config.spring.ReferenceBean.getObject(ReferenceBean.java:65)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
+	... 55 more
+2016-06-16 10:10:05,300 [main] ERROR ramework.test.context.TestContextManager -Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6fdbe764] to prepare test instance [org.jigang.Test1@51c668e3]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:119)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:42)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.jigang.ws.ITest org.jigang.TestService.test; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	... 29 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.jigang.ws.ITest org.jigang.TestService.test; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 45 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:175)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:103)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 47 more
+Caused by: java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at com.alibaba.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:420)
+	at com.alibaba.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:300)
+	at com.alibaba.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:138)
+	at com.alibaba.dubbo.config.spring.ReferenceBean.getObject(ReferenceBean.java:65)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
+	... 55 more
+2016-06-16 10:10:05,300 [main] ERROR ramework.test.context.TestContextManager -Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6fdbe764] to prepare test instance [org.jigang.Test1@51c668e3]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:119)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:42)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.jigang.ws.ITest org.jigang.TestService.test; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	... 29 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.jigang.ws.ITest org.jigang.TestService.test; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 45 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:175)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:103)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 47 more
+Caused by: java.lang.IllegalStateException: Failed to check the status of the service org.jigang.ws.ITest. No provider available for the service org.jigang.ws.ITest:1.0.0 from the url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 to the consumer 10.1.60.18 use dubbo version 2.5.3
+	at com.alibaba.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:420)
+	at com.alibaba.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:300)
+	at com.alibaba.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:138)
+	at com.alibaba.dubbo.config.spring.ReferenceBean.getObject(ReferenceBean.java:65)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
+	... 55 more
+2016-06-16 10:10:05,327 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig  - [DUBBO] Run shutdown hook now., dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:05,328 [DubboShutdownHook] INFO  registry.support.AbstractRegistryFactory - [DUBBO] Close all registries [zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=com.alibaba.dubbo.registry.RegistryService&pid=8100&timestamp=1466042995508], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:05,328 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Destroy registry:zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=com.alibaba.dubbo.registry.RegistryService&pid=8100&timestamp=1466042995508, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:05,328 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Unregister: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:05,333 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Destroy unregister url consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:05,333 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Unsubscribe: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:05,333 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Destroy unsubscribe url consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers,configurators,routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:05,334 [ZkClient-EventThread-13-192.168.153.128:2181] INFO  org.I0Itec.zkclient.ZkEventThread        -Terminate ZkClient event thread.
+2016-06-16 10:10:26,774 [main] INFO  libaba.dubbo.common.logger.LoggerFactory -using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2016-06-16 10:10:27,656 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Load registry store file C:\Users\BF100252\.dubbo\dubbo-registry-192.168.153.128.cache, data: {org.jigang.ws.ITest:1.0.0=empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=configurators&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=routers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0 empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=8100&revision=1.0.0&side=consumer&timestamp=1466042995423&version=1.0.0}, dubbo version: 2.5.3, current host: 127.0.0.1
+2016-06-16 10:10:27,909 [ZkClient-EventThread-13-192.168.153.128:2181] INFO  org.I0Itec.zkclient.ZkEventThread        -Starting ZkClient event thread.
+2016-06-16 10:10:37,653 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 10:10:37,653 [main-SendThread(192.168.153.128:2181)] WARN  org.apache.zookeeper.ClientCnxnSocket    -Connected to an old server; r-o mode will be unavailable
+2016-06-16 10:10:37,655 [main-EventThread] INFO  org.I0Itec.zkclient.ZkClient             -zookeeper state changed (SyncConnected)
+2016-06-16 10:10:37,695 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Register: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=9212&revision=1.0.0&side=consumer&timestamp=1466043027500&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:37,737 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Subscribe: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers,configurators,routers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=9212&revision=1.0.0&side=consumer&timestamp=1466043027500&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:37,806 [main] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Notify urls for subscribe url consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers,configurators,routers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=9212&revision=1.0.0&side=consumer&timestamp=1466043027500&version=1.0.0, urls: [empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=9212&revision=1.0.0&side=consumer&timestamp=1466043027500&version=1.0.0, empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=configurators&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=9212&revision=1.0.0&side=consumer&timestamp=1466043027500&version=1.0.0, empty://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=routers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=9212&revision=1.0.0&side=consumer&timestamp=1466043027500&version=1.0.0], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:37,813 [main] INFO  com.alibaba.dubbo.config.AbstractConfig  - [DUBBO] Refer dubbo service org.jigang.ws.ITest from url zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=9212&revision=1.0.0&side=consumer&timestamp=1466043027500&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:37,845 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig  - [DUBBO] Run shutdown hook now., dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:37,846 [DubboShutdownHook] INFO  registry.support.AbstractRegistryFactory - [DUBBO] Close all registries [zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=com.alibaba.dubbo.registry.RegistryService&pid=9212&timestamp=1466043027594], dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:37,846 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Destroy registry:zookeeper://192.168.153.128:2181/com.alibaba.dubbo.registry.RegistryService?application=dubbo_test_1&dubbo=2.5.3&interface=com.alibaba.dubbo.registry.RegistryService&pid=9212&timestamp=1466043027594, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:37,847 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Unregister: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=9212&revision=1.0.0&side=consumer&timestamp=1466043027500&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:37,847 [Thread-1] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Unsubscribe: consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=providers,configurators,routers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=9212&revision=1.0.0&side=consumer&timestamp=1466043027500&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:37,851 [DubboShutdownHook] INFO  bbo.registry.zookeeper.ZookeeperRegistry - [DUBBO] Destroy unregister url consumer://10.1.60.18/org.jigang.ws.ITest?application=dubbo_test_1&category=consumers&check=false&dubbo=2.5.3&interface=org.jigang.ws.ITest&methods=sayHello&pid=9212&revision=1.0.0&side=consumer&timestamp=1466043027500&version=1.0.0, dubbo version: 2.5.3, current host: 10.1.60.18
+2016-06-16 10:10:37,852 [ZkClient-EventThread-13-192.168.153.128:2181] INFO  org.I0Itec.zkclient.ZkEventThread        -Terminate ZkClient event thread.

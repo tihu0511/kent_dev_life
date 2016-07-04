@@ -9,4 +9,6 @@
 
     <!-- 定义消费者接口 -->
     <dubbo:reference interface="org.jigang.ws.ITest" id="test" version="1.0.0"  check="false" />
+
+    <dubbo:reference interface="org.jigang.ws.IValidationService" id="validationService" version="1.0.0" check="false" validation="true" />
 </beans>
