@@ -25,9 +25,7 @@ import org.apache.log4j.Logger;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -44,6 +42,8 @@ public class HttpUtil {
     public static final String TEXT_XML = "text/xml";
     public static final String APPLICATION_XML = "application/xml";
     public final static String APPLICATION_JSON = "application/json";
+
+    private static final int BUFFER_SIZE = 1024;
 
     private static final Logger logger = Logger.getLogger(HttpUtil.class);
     //默认编码
@@ -237,7 +237,10 @@ public class HttpUtil {
      * @throws IOException
      */
     private static String resolveResponse(CloseableHttpResponse response, String charset) throws IOException {
-        BufferedReader br = null;
+        BufferedInputStream bis = null;
+        ByteArrayOutputStream baos = null;
+        BufferedOutputStream bos = null;
+
         try {
             //跳转到重定向的url
             if (response.getStatusLine().getStatusCode() == 302) {
@@ -246,18 +249,28 @@ public class HttpUtil {
                 return get(locationUrl, charset);
             }else {
                 HttpEntity entity = response.getEntity();
-                StringBuffer result = new StringBuffer();
-                br = new BufferedReader(new InputStreamReader(entity.getContent(), charset));
+                bis = new BufferedInputStream(entity.getContent());
+                baos = new ByteArrayOutputStream();
+                bos = new BufferedOutputStream(baos);
 
-                String line = null;
-                while ((line = br.readLine()) != null) {
-                    result.append(line);
+                byte[] buf = new byte[BUFFER_SIZE];
+                int len = -1;
+                while((len = bis.read(buf)) != -1) {
+                    bos.write(buf, 0, len);
                 }
-                return result.toString();
+                bos.flush();
+
+                return new String(baos.toByteArray(), charset);
             }
         } finally {
-            if (null != br) {
-                br.close();
+            if (null != bos) {
+                bos.close();
+            }
+            if (null != baos) {
+                baos.close();
+            }
+            if (null != bis) {
+                bis.close();
             }
         }
     }

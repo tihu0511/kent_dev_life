@@ -21,4 +21,43 @@
 
     <context:component-scan base-package="org.jigang" />
 
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="${jdbc.driver}" />
+        <property name="jdbcUrl" value="${jdbc.url}" />
+        <property name="user" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+        <property name="minPoolSize" value="${jdbc.minPoolSize}" />
+        <property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+        <property name="acquireIncrement" value="${jdbc.acquireIncrement}" />
+        <property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+        <property name="maxStatements" value="${jdbc.maxStatements}" />
+    </bean>
+
+    <!-- sqlSessionFactory -->
+    <!-- MyBatis在spring中Bean的配置，基本固定 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="mapperLocations" value="classpath*:sql/**/*.xml">
+        </property>
+    </bean>
+
+    <!-- 相当于context:component-scan，但是是采用mybatis扫描方式 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="org.jigang.demo.dao,org.jigang.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+
+    <!-- 事务控制 -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="transactionTemplate"
+          class="org.springframework.transaction.support.TransactionTemplate">
+        <constructor-arg ref="transactionManager" />
+    </bean>
+
+
 </beans>

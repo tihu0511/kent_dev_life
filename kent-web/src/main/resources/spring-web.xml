@@ -6,11 +6,11 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd"
 	default-init-method="init">
 
-    <bean id="multipartResolver"
+    <!--<bean id="multipartResolver"
           class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <!-- 以字节为单位的最大上传文件的大小 -->
+        &lt;!&ndash; 以字节为单位的最大上传文件的大小 &ndash;&gt;
         <property name="maxUploadSize" value="10000000" />
-    </bean>
+    </bean>-->
 
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">

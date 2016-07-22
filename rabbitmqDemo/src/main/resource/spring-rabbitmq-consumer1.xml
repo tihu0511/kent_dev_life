@@ -46,7 +46,7 @@
                 <value type="java.lang.Long">200</value>
             </entry>
             <!-- 设置消息过期时间,时间一过消息自动删除, 单位：毫秒 -->
-            <entry key="x-message-ttl">
+            <entry key="x-errorMsg-ttl">
                 <value type="java.lang.Long">3600000</value>
             </entry>
         </rabbit:queue-arguments>
@@ -60,7 +60,7 @@
                 <value type="java.lang.Long">200</value>
             </entry>
             <!-- 设置消息过期时间,时间一过消息自动删除, 单位：毫秒 -->
-            <entry key="x-message-ttl">
+            <entry key="x-errorMsg-ttl">
                 <value type="java.lang.Long">3600000</value>
             </entry>
         </rabbit:queue-arguments>
@@ -72,7 +72,7 @@
                 <value type="java.lang.Long">200</value>
             </entry>
             <!-- 设置消息过期时间,时间一过消息自动删除, 单位：毫秒 -->
-            <entry key="x-message-ttl">
+            <entry key="x-errorMsg-ttl">
                 <value type="java.lang.Long">3600000</value>
             </entry>
         </rabbit:queue-arguments>

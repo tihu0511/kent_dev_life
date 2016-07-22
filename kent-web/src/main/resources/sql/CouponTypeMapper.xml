@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jigang.dao.ICouponTypeDao">
+	<sql id="queryCouponTypeAllColumn">
+		 SELECT id AS id,
+			MERCHANT_ID AS merchantId,
+			NAME AS name,
+			ICON AS icon,
+			TOTAL_NUM AS totalNum,
+			REST_NUM AS restNum,
+			IS_IMMEDIATE AS isImmediate,
+			RESET_INTERVAL AS resetInterval,
+			LAST_RESET_TIME AS lastResetTime,
+			VERSION AS version,
+			STATE AS state,
+			CREATE_TIME AS createTime,
+			UPDATE_TIME AS updateTime,
+			TYPE AS type
+		FROM TEST.COUPON_TYPE
+	</sql>
+
+	<select id="queryById" resultType="org.jigang.entity.CouponType">
+		<include refid="queryCouponTypeAllColumn"/>
+		WHERE ID = #{id}
+	</select>
+
+	<insert id="add" keyProperty="id" useGeneratedKeys="true" parameterType="org.jigang.entity.CouponType">
+		INSERT INTO TEST.COUPON_TYPE(
+			MERCHANT_ID,
+			<if test="name != null">
+				NAME,
+			</if>
+			<if test="icon != null">
+				ICON,
+			</if>
+			<if test="totalNum != null">
+				TOTAL_NUM,
+			</if>
+			<if test="restNum != null">
+				REST_NUM,
+			</if>
+			<if test="isImmediate != null">
+				IS_IMMEDIATE,
+			</if>
+			<if test="resetInterval != null">
+				RESET_INTERVAL,
+			</if>
+			<if test="lastResetTime != null">
+				LAST_RESET_TIME,
+			</if>
+			VERSION,
+			STATE,
+			<if test="updateTime != null">
+				UPDATE_TIME,
+			</if>
+			<if test="type != null">
+				TYPE,
+			</if>
+			CREATE_TIME
+		) values (
+			#{merchantId},
+			<if test="name != null">
+				#{name},
+			</if>
+			<if test="icon != null">
+				#{icon},
+			</if>
+			<if test="totalNum != null">
+				#{totalNum},
+			</if>
+			<if test="restNum != null">
+				#{restNum},
+			</if>
+			<if test="isImmediate != null">
+				#{isImmediate},
+			</if>
+			<if test="resetInterval != null">
+				#{resetInterval},
+			</if>
+			<if test="lastResetTime != null">
+				#{lastResetTime},
+			</if>
+			#{version},
+			#{state},
+			<if test="updateTime != null">
+				#{updateTime},
+			</if>
+			<if test="type != null">
+				#{type},
+			</if>
+			#{createTime}
+		)
+	</insert>	<update id="update" parameterType="org.jigang.entity.CouponType">
+		UPDATE TEST.COUPON_TYPE set 
+			<if test="merchantId != null">
+				MERCHANT_ID = #{merchantId},
+			</if>
+			<if test="name != null">
+				NAME = #{name},
+			</if>
+			<if test="icon != null">
+				ICON = #{icon},
+			</if>
+			<if test="totalNum != null">
+				TOTAL_NUM = #{totalNum},
+			</if>
+			<if test="restNum != null">
+				REST_NUM = #{restNum},
+			</if>
+			<if test="isImmediate != null">
+				IS_IMMEDIATE = #{isImmediate},
+			</if>
+			<if test="resetInterval != null">
+				RESET_INTERVAL = #{resetInterval},
+			</if>
+			<if test="lastResetTime != null">
+				LAST_RESET_TIME = #{lastResetTime},
+			</if>
+			<if test="version != null">
+				VERSION = #{version},
+			</if>
+			<if test="state != null">
+				STATE = #{state},
+			</if>
+			<if test="createTime != null">
+				CREATE_TIME = #{createTime},
+			</if>
+			<if test="type != null">
+				TYPE = #{type},
+			</if>
+			UPDATE_TIME = #{updateTime}
+		WHERE ID = #{id}
+</update>
+</mapper>

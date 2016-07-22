@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jigang.dao.IAccountDao">
+	<sql id="queryAccountAllColumn">
+		 SELECT id AS id,
+			MERCHANT_ID AS merchantId,
+			ACCOUNT_NAME AS accountName,
+			ACCOUNT_PWD AS accountPwd,
+			LAST_LOGIN_TIME AS lastLoginTime,
+			STATE AS state,
+			CREATE_TIME AS createTime,
+			UPDATE_TIME AS updateTime
+		FROM TEST.ACCOUNT
+	</sql>
+
+	<select id="queryById" resultType="org.jigang.entity.Account">
+		<include refid="queryAccountAllColumn"/>
+		WHERE ID = #{id}
+	</select>
+
+	<insert id="add" keyProperty="id" useGeneratedKeys="true" parameterType="org.jigang.entity.Account">
+		INSERT INTO TEST.ACCOUNT(
+			MERCHANT_ID,
+			<if test="accountName != null">
+				ACCOUNT_NAME,
+			</if>
+			<if test="accountPwd != null">
+				ACCOUNT_PWD,
+			</if>
+			<if test="lastLoginTime != null">
+				LAST_LOGIN_TIME,
+			</if>
+			STATE,
+			<if test="updateTime != null">
+				UPDATE_TIME,
+			</if>
+			CREATE_TIME
+		) values (
+			#{merchantId},
+			<if test="accountName != null">
+				#{accountName},
+			</if>
+			<if test="accountPwd != null">
+				#{accountPwd},
+			</if>
+			<if test="lastLoginTime != null">
+				#{lastLoginTime},
+			</if>
+			#{state},
+			<if test="updateTime != null">
+				#{updateTime},
+			</if>
+			#{createTime}
+		)
+	</insert>	<update id="update" parameterType="org.jigang.entity.Account">
+		UPDATE TEST.ACCOUNT set 
+			<if test="merchantId != null">
+				MERCHANT_ID = #{merchantId},
+			</if>
+			<if test="accountName != null">
+				ACCOUNT_NAME = #{accountName},
+			</if>
+			<if test="accountPwd != null">
+				ACCOUNT_PWD = #{accountPwd},
+			</if>
+			<if test="lastLoginTime != null">
+				LAST_LOGIN_TIME = #{lastLoginTime},
+			</if>
+			<if test="state != null">
+				STATE = #{state},
+			</if>
+			<if test="createTime != null">
+				CREATE_TIME = #{createTime},
+			</if>
+			UPDATE_TIME = #{updateTime}
+		WHERE ID = #{id}
+</update>
+</mapper>

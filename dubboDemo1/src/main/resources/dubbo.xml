@@ -8,7 +8,7 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!-- 提供生产者接口 -->
-    <dubbo:service interface="org.jigang.ws.ITest" ref="testImpl" version="1.0.0" />
+    <dubbo:service interface="org.jigang.ws.ITest" ref="testImpl" version="1.0.0" filter="TestFilter" />
 
     <dubbo:service interface="org.jigang.ws.IValidationService" ref="validationService" version="1.0.0" />
 </beans>
